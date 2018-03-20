@@ -2,9 +2,7 @@
     <div class="drag-table">
         <div class="table">
             <div class="table-head">
-                <div class="head-item">题目编号</div>
-                <div class="head-item">题目内容</div>
-                <div class="head-item">正确答案</div>
+                <div class="head-item" v-for="(row, i) in rowData" :key="i" v-show="i !== 0">{{row.title}}</div>
                 <div class="head-item">操作</div>
             </div>
             <ul class="table-body">
@@ -19,7 +17,7 @@
                 @dragleave="dragleaveEvent"
                 @dragover="dragoverEvent">
                     <div class="row-item">{{index + 1}}</div>
-                    <div class="row-item" v-for="(row, i) in rowData" :key="i" v-show="i !== 0">{{item[row]}}</div>
+                    <div class="row-item" v-for="(row, i) in rowData" :key="i" v-show="i !== 0">{{item[row.value]}}</div>
                     <div class="row-item">
                         <router-link to="/" tag="a" class="icon-btn el-icon-edit-outline"></router-link>
                         <a href="javascript:;" class="icon-btn el-icon-delete" @click="delRow(item[tablekey])"></a>
@@ -89,10 +87,9 @@ export default {
         dragoverEvent (ev) {
             ev.preventDefault();
         },
-        // 题目排序
+        // 排序
         sortHandle () {
-            console.log('排序后的操作')
-            console.log(this.sortArr);
+            this.$emit('sortHandle', this.sortArr);
         }
     }
 }

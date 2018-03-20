@@ -1,6 +1,6 @@
 <template>
     <div class="index">
-        <drag-table :tableData="answerData" :rowData="rowData" tablekey="q_id"></drag-table>
+        <drag-table :tableData="answerData" :rowData="rowData" tablekey="q_id" @sortHandle="sortHandle"></drag-table>
     </div>
 </template>
 
@@ -31,7 +31,20 @@ export default {
                     correct_answer: 'D'
                 }
             ],
-            rowData: ['q_id', 'title', 'correct_answer']
+            rowData: [
+                {
+                    title: 'id',
+                    value: 'q_id'
+                },
+                {
+                    title: '题目内容',
+                    value: 'title'
+                },
+                {
+                    title: '正确答案',
+                    value: 'correct_answer'
+                }
+            ]
         }
     },
     components: {
@@ -41,7 +54,10 @@ export default {
 
     },
     methods: {
-
+        sortHandle (val) {
+            console.log('排序后的操作');
+            console.log(val);
+        }
     }
 }
 </script>
