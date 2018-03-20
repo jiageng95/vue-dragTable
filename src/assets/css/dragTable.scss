@@ -1,0 +1,46 @@
+// 自定义表格
+.table {
+    border: 1px solid #ebeef5;
+    width: 100%;
+    .table-head {
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid #ebeef5;
+        background: #f9f9f9;
+        color: #63676b;
+        display: flex;
+        div {
+            flex: 1;
+            padding: 12px 0;
+            padding-left: 30px;
+            word-wrap: normal;
+            text-overflow: ellipsis;
+            vertical-align: middle;
+            box-sizing: border-box;
+            position: relative;
+            width: 100%;
+            font-weight: 800;
+        }
+    }
+    .table-body {
+        width: 100%;
+        overflow: hidden;
+        background: #fff;
+        color: #63676b;
+        .table-row {
+            display: flex;
+            border-bottom: 1px solid #ebeef5;
+            padding: 12px 0;
+            word-wrap: normal;
+            text-overflow: ellipsis;
+            vertical-align: middle;
+            box-sizing: border-box;
+            position: relative;
+            width: 100%;
+            div {
+                padding-left: 30px;
+                flex: 1;
+            }
+        }
+    }
+}
