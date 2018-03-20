@@ -1,6 +1,7 @@
-# components
+# vue-dragTable
 
-> A Vue.js project
+> 一个支持表格内数据拖拽排序的vue组件
+> clone下来后直接照搬就行了,简单易懂.
 
 ## Build Setup
 
